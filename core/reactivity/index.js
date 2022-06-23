@@ -3,7 +3,6 @@
 // 依赖
 let currentEffect;
 class Dep {
-  // 1.收集依赖
   constructor(val) {
     // es6+
     this.effects = new Set();
@@ -17,8 +16,9 @@ class Dep {
     this._val = newVal;
     this.notice();
   }
+  // 1.收集依赖
   depend() {
-    //
+    //判断是否有依赖，有就加入
     if (currentEffect) {
       this.effects.add(currentEffect);
     }
@@ -42,6 +42,7 @@ export function effectWatch(effect) {
 }
 
 // ref -> 很像了
+// 测试代码1
 // const dep = new Dep(10);
 
 // effectWatch(() => {
