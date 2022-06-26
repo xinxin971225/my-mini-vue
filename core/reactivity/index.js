@@ -69,7 +69,6 @@ export function effectWatch(effect) {
 const targetMap = new Map();
 
 function getDep(target, key) {
-  console.log("target, key", target, key);
   let depsMap = targetMap.get(target);
   if (!depsMap) {
     depsMap = new Map();
