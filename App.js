@@ -1,6 +1,7 @@
 // const { effect, reactive } = require("@vue/reactivity");
 // const { effectWatch, reactive } = require("./core/reactivity");
-import { effectWatch, reactive } from "./core/reactivity/index.js";
+// import { effectWatch, reactive } from "./core/reactivity/index.js";
+import { reactive } from "./core/reactivity/index.js";
 import { h } from "./core/h.js";
 // let a = 10;
 // let b = a + 10;
@@ -29,20 +30,20 @@ import { h } from "./core/h.js";
 
 // 申明相应对象
 // ref =>number
-let a = reactive({
-  value: 1,
-});
-let b;
+// let a = reactive({
+//   value: 1,
+// });
+// let b;
 
-effectWatch(() => {
-  b = a.value + 10;
-  console.log(b);
-});
+// effectWatch(() => {
+//   b = a.value + 10;
+//   console.log(b);
+// });
 
-a.value = 30;
+// a.value = 30;
 
-// vue3
-
+// // vue3
+// const App = {
 export default {
   // template -> render
   render(context) {
@@ -81,3 +82,5 @@ export default {
     };
   },
 };
+
+// app.render(app.setup())
